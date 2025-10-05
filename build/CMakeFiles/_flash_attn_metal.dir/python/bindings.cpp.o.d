@@ -1,5 +1,5 @@
 CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o: \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/python/bindings.cpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/python/bindings.cpp \
   /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pybind11/include/pybind11/pybind11.h \
   /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pybind11/include/pybind11/detail/class.h \
   /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pybind11/include/pybind11/attr.h \
@@ -997,5 +997,5 @@ CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/valarray \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/include/flash_attn_core.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/include/flash_attn_core.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream

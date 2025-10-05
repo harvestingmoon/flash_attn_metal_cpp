@@ -1,14 +1,10 @@
-// Ultra-optimized Flash Attention Forward Pass for Apple Silicon
-// Target: Beat MLX performance through aggressive optimization
-// Strategy: Maximize parallelism, minimize sync, optimize memory access
 
 #include <metal_stdlib>
 using namespace metal;
 
-// Optimized block configuration for Apple Silicon  
-#define OPT_BLOCK_M 32   // Q block size
-#define OPT_BLOCK_N 32   // KV block size
-#define OPT_THREADS 256  // 8 warps for optimal occupancy
+#define OPT_BLOCK_M 32   
+#define OPT_BLOCK_N 32   
+#define OPT_THREADS 256  
 
 kernel void flash_attention_forward(
     device const half* Q [[buffer(0)]],
@@ -26,21 +22,17 @@ kernel void flash_attention_forward(
     uint simd_lane_id [[thread_index_in_simdgroup]],
     uint simd_group_id [[simdgroup_index_in_threadgroup]])
 {
-    // Calculate position in output grid
+    
     const uint batch_idx = tgid.z;
     const uint head_idx = tgid.y;
     const uint q_block_idx = tgid.x;
-    
-    // Early exit for out of bounds
     const uint q_start = q_block_idx * OPT_BLOCK_M;
     if (q_start >= seqlen) return;
     
-    // Shared memory for Q, K, V blocks - using efficient layout
     threadgroup half Q_shared[OPT_BLOCK_M * 128];  // Max head_dim = 128
     threadgroup half K_shared[OPT_BLOCK_N * 128];
     threadgroup half V_shared[OPT_BLOCK_N * 128];
     
-    // Base pointers for current batch and head
     const uint base_offset = (batch_idx * num_heads + head_idx) * seqlen * head_dim;
     device const half* Q_base = Q + base_offset;
     device const half* K_base = K + base_offset;
@@ -51,11 +43,9 @@ kernel void flash_attention_forward(
     const uint thread_id = tid.x;
     const uint num_threads = OPT_THREADS;
     
-    // Calculate actual Q block size
+    
     const uint q_block_size = min(uint(OPT_BLOCK_M), seqlen - q_start);
     
-    // Load Q block into shared memory with coalesced access
-    // Each thread loads multiple elements
     for (uint i = thread_id; i < q_block_size * head_dim; i += num_threads) {
         const uint row = i / head_dim;
         const uint col = i % head_dim;
@@ -66,7 +56,6 @@ kernel void flash_attention_forward(
     }
     threadgroup_barrier(mem_flags::mem_threadgroup);
     
-    // Each thread processes one Q row
     if (thread_id >= q_block_size) {
         return;
     }
@@ -74,12 +63,11 @@ kernel void flash_attention_forward(
     const uint q_row = thread_id;
     const uint global_q_idx = q_start + q_row;
     
-    // Per-thread accumulators for this Q row
-    float m_i = -INFINITY;  // Max value
-    float l_i = 0.0f;       // Sum of exp
-    float O_local[128];     // Output accumulator (max head_dim)
     
-    // Initialize output to zero
+    float m_i = -INFINITY;  
+    float l_i = 0.0f;       
+    float O_local[128];     
+    
     for (uint d = 0; d < head_dim; ++d) {
         O_local[d] = 0.0f;
     }
@@ -87,7 +75,7 @@ kernel void flash_attention_forward(
     // Get pointer to Q row in shared memory
     threadgroup const half* q_row_ptr = Q_shared + q_row * head_dim;
     
-    // Process K,V in blocks with AGGRESSIVE CAUSAL OPTIMIZATION
+    // Process K,V in blocks 
     const uint num_kv_blocks = (seqlen + OPT_BLOCK_N - 1) / OPT_BLOCK_N;
     for (uint kv_block_idx = 0; kv_block_idx < num_kv_blocks; ++kv_block_idx) {
         const uint kv_start = kv_block_idx * OPT_BLOCK_N;
@@ -115,7 +103,7 @@ kernel void flash_attention_forward(
         threadgroup_barrier(mem_flags::mem_threadgroup);
         
         // Compute attention scores for this Q row against K block
-        float S_local[32];  // Attention scores for BLOCK_N keys
+        float S_local[32]; 
         
         // Compute S = Q @ K^T * scale with vectorized operations
         for (uint k_row = 0; k_row < kv_block_size; ++k_row) {
@@ -149,8 +137,6 @@ kernel void flash_attention_forward(
             
             score *= softmax_scale;
             
-            // OPTIMIZATION 7: Tighter causal masking - only check within valid range
-            // Since we already limited kv_block_size, this check is mainly for safety
             const uint global_k_idx = kv_start + k_row;
             if (is_causal && global_k_idx > global_q_idx) {
                 score = -INFINITY;
@@ -186,7 +172,6 @@ kernel void flash_attention_forward(
             threadgroup const half* v_row_ptr = V_shared + k_row * head_dim;
             const float attn_weight = S_local[k_row];
             
-            // Vectorized accumulation with float4
             uint d = 0;
             for (; d + 3 < head_dim; d += 4) {
                 float4 v_vec = float4(
@@ -208,13 +193,11 @@ kernel void flash_attention_forward(
                 O_local[d+3] = o_vec.w;
             }
             
-            // Handle remaining elements
             for (; d < head_dim; ++d) {
                 O_local[d] += attn_weight * float(v_row_ptr[d]);
             }
         }
         
-        // Update statistics
         l_i = scale * l_i + l_new;
         m_i = m_new;
         
@@ -225,7 +208,6 @@ kernel void flash_attention_forward(
     const float norm = 1.0f / l_i;
     device half* output_row = O_base + global_q_idx * head_dim;
     
-    // Vectorized output write
     uint d = 0;
     for (; d + 3 < head_dim; d += 4) {
         output_row[d] = half(O_local[d] * norm);
@@ -234,7 +216,6 @@ kernel void flash_attention_forward(
         output_row[d+3] = half(O_local[d+3] * norm);
     }
     
-    // Handle remaining elements
     for (; d < head_dim; ++d) {
         output_row[d] = half(O_local[d] * norm);
     }

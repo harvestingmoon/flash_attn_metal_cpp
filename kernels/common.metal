@@ -9,9 +9,6 @@
 #include <metal_stdlib>
 using namespace metal;
 
-// ============================================================================
-// Constants and Configuration
-// ============================================================================
 
 // Block sizes for tiling (tuned for Apple Silicon)
 constant uint BLOCK_M [[function_constant(0)]];  // Query tile size (default: 64)
@@ -26,9 +23,6 @@ constant uint DEFAULT_BLOCK_N = 32;
 constant uint DEFAULT_BLOCK_HEADDIM = 64;
 constant uint DEFAULT_NUM_WARPS = 4;
 
-// ============================================================================
-// Type Definitions
-// ============================================================================
 
 struct FlashAttentionParams {
     uint batch_size;
@@ -62,9 +56,6 @@ inline float safe_exp(float x) {
     return exp(min(x, 88.0f));  // exp(88) ≈ 1e38, safe for float
 }
 
-// ============================================================================
-// Softmax Utilities (Online Softmax Algorithm)
-// ============================================================================
 
 // Online softmax state for numerical stability
 // Following the algorithm from "Online normalizer calculation for softmax"
@@ -94,9 +85,6 @@ inline float compute_softmax_prob(float attn_score, thread const SoftmaxState& s
     return safe_exp(attn_score - state.max_val) / state.sum_exp;
 }
 
-// ============================================================================
-// Masking Functions
-// ============================================================================
 
 // Causal mask: only attend to positions <= current position
 inline bool is_causal_masked(uint q_idx, uint k_idx, bool is_causal) {
@@ -130,9 +118,6 @@ inline bool is_masked(uint q_idx, uint k_idx, constant FlashAttentionParams& par
     return false;
 }
 
-// ============================================================================
-// ALiBi (Attention with Linear Biases)
-// ============================================================================
 
 // Compute ALiBi bias for a given position
 inline float compute_alibi_bias(uint q_idx, uint k_idx, uint head_idx, 
@@ -142,9 +127,6 @@ inline float compute_alibi_bias(uint q_idx, uint k_idx, uint head_idx,
     return slope * float(relative_pos);
 }
 
-// ============================================================================
-// Rotary Position Embeddings (RoPE)
-// ============================================================================
 
 // Apply RoPE to a pair of values (thread memory version)
 inline void apply_rotary_pair(thread float& x, thread float& y, 
@@ -204,9 +186,6 @@ inline void apply_rotary_embedding(
     }
 }
 
-// ============================================================================
-// Dropout
-// ============================================================================
 
 // Simple dropout with uniform random distribution
 // NOTE: For production, use a proper PRNG seeded per sequence
@@ -231,18 +210,12 @@ inline float dropout_random(uint seed, uint idx) {
     return float(state) / 4294967296.0f;
 }
 
-// ============================================================================
-// GQA (Grouped Query Attention) Utilities
-// ============================================================================
 
 // Map query head to corresponding key/value head for GQA
 inline uint gqa_kv_head_idx(uint q_head_idx, uint gqa_group_size) {
     return q_head_idx / gqa_group_size;
 }
 
-// ============================================================================
-// Memory Access Patterns (Coalesced Access)
-// ============================================================================
 
 // Compute strided index for coalesced memory access
 inline uint compute_strided_idx(uint batch, uint seq, uint head, uint dim,
@@ -251,18 +224,12 @@ inline uint compute_strided_idx(uint batch, uint seq, uint head, uint dim,
     return ((batch * seqlen + seq) * num_heads + head) * head_dim + dim;
 }
 
-// ============================================================================
-// Threadgroup (Shared Memory) Utilities
-// ============================================================================
 
 // Threadgroup barrier for synchronization
 inline void threadgroup_barrier_sync(metal::mem_flags barrier_type = metal::mem_flags::mem_threadgroup) {
     metal::threadgroup_barrier(barrier_type);
 }
 
-// ============================================================================
-// SIMD Group (Warp-level) Operations
-// ============================================================================
 
 // SIMD shuffle for warp-level communication
 template<typename T>
@@ -280,9 +247,6 @@ inline float simd_max(float value) {
     return simd_max(value);
 }
 
-// ============================================================================
-// Block-level Reductions (for softmax)
-// ============================================================================
 
 // Reduce max across threadgroup (for numerical stability)
 inline float threadgroup_max_reduce(float value, 
@@ -323,9 +287,6 @@ inline float threadgroup_sum_reduce(float value,
     return shared_mem[0];
 }
 
-// ============================================================================
-// Half-precision (FP16) Utilities
-// ============================================================================
 
 #ifdef USE_FP16
 using compute_type = half;
@@ -342,9 +303,6 @@ inline half to_half(float value) {
     return half(value);
 }
 
-// ============================================================================
-// Matrix Multiplication Helpers
-// ============================================================================
 
 // Dot product between two vectors (thread memory version)
 inline float dot_product(thread const float* a, thread const float* b, uint len) {
@@ -396,10 +354,6 @@ inline void store_vector(device half* dst,
         dst[i] = to_half(src[i]);
     }
 }
-
-// ============================================================================
-// HIGHLY OPTIMIZED SIMDGROUP OPERATIONS (CRITICAL FOR PERFORMANCE!)
-// ============================================================================
 
 // Fast max (prefer fmax for better codegen)
 inline float fast_max(float a, float b) {
@@ -454,10 +408,6 @@ inline float fast_exp_clamped(float x) {
     return exp(clamp(x, -88.0f, 88.0f));
 }
 
-// ============================================================================
-// Debug Utilities (can be removed in production)
-// ============================================================================
-
 #ifdef DEBUG_MODE
 inline void debug_assert(bool condition, constant char* message) {
     if (!condition) {
@@ -469,9 +419,6 @@ inline void debug_assert(bool condition, constant char* message) {
 inline void debug_assert(bool condition, constant char* message) {}
 #endif
 
-// ============================================================================
-// OPTIMIZATION: Simdgroup operations for fast reductions
-// ============================================================================
 
 // Fast max using simdgroup (8x faster than manual loop)
 inline float simdgroup_fast_max(float val, uint simd_lane_id) {

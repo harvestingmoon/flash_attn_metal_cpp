@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal
+CMAKE_SOURCE_DIR = /Users/bytedance/Documents/flash_attn_silicon_metal
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build
+CMAKE_BINARY_DIR = /Users/bytedance/Documents/flash_attn_silicon_metal/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/flash_attn_metal_core.dir/depend.make
@@ -73,18 +73,18 @@ CMakeFiles/flash_attn_metal_core.dir/codegen:
 .PHONY : CMakeFiles/flash_attn_metal_core.dir/codegen
 
 CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o: CMakeFiles/flash_attn_metal_core.dir/flags.make
-CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o: /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/src/flash_attn_core.cpp
+CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o: /Users/bytedance/Documents/flash_attn_silicon_metal/src/flash_attn_core.cpp
 CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o: CMakeFiles/flash_attn_metal_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o -MF CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o.d -o CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o -c /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/src/flash_attn_core.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o -MF CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o.d -o CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o -c /Users/bytedance/Documents/flash_attn_silicon_metal/src/flash_attn_core.cpp
 
 CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/src/flash_attn_core.cpp > CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bytedance/Documents/flash_attn_silicon_metal/src/flash_attn_core.cpp > CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.i
 
 CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/src/flash_attn_core.cpp -o CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bytedance/Documents/flash_attn_silicon_metal/src/flash_attn_core.cpp -o CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.s
 
 # Object files for target flash_attn_metal_core
 flash_attn_metal_core_OBJECTS = \
@@ -96,7 +96,7 @@ flash_attn_metal_core_EXTERNAL_OBJECTS =
 libflash_attn_metal_core.dylib: CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o
 libflash_attn_metal_core.dylib: CMakeFiles/flash_attn_metal_core.dir/build.make
 libflash_attn_metal_core.dylib: CMakeFiles/flash_attn_metal_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libflash_attn_metal_core.dylib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libflash_attn_metal_core.dylib"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/flash_attn_metal_core.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +108,6 @@ CMakeFiles/flash_attn_metal_core.dir/clean:
 .PHONY : CMakeFiles/flash_attn_metal_core.dir/clean
 
 CMakeFiles/flash_attn_metal_core.dir/depend:
-	cd /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles/flash_attn_metal_core.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/bytedance/Documents/flash_attn_silicon_metal/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/bytedance/Documents/flash_attn_silicon_metal /Users/bytedance/Documents/flash_attn_silicon_metal /Users/bytedance/Documents/flash_attn_silicon_metal/build /Users/bytedance/Documents/flash_attn_silicon_metal/build /Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles/flash_attn_metal_core.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/flash_attn_metal_core.dir/depend
 

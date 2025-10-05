@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal
+CMAKE_SOURCE_DIR = /Users/bytedance/Documents/flash_attn_silicon_metal
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build
+CMAKE_BINARY_DIR = /Users/bytedance/Documents/flash_attn_silicon_metal/build
 
 # Utility rule file for metal_shaders.
 
@@ -81,6 +81,6 @@ CMakeFiles/metal_shaders.dir/clean:
 .PHONY : CMakeFiles/metal_shaders.dir/clean
 
 CMakeFiles/metal_shaders.dir/depend:
-	cd /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles/metal_shaders.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/bytedance/Documents/flash_attn_silicon_metal/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/bytedance/Documents/flash_attn_silicon_metal /Users/bytedance/Documents/flash_attn_silicon_metal /Users/bytedance/Documents/flash_attn_silicon_metal/build /Users/bytedance/Documents/flash_attn_silicon_metal/build /Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles/metal_shaders.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/metal_shaders.dir/depend
 

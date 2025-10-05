@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -D_flash_attn_metal_EXPORTS
 
-CXX_INCLUDES = -I/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/include -I/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp -isystem /Library/Frameworks/Python.framework/Versions/3.12/include/python3.12 -isystem /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pybind11/include
+CXX_INCLUDES = -I/Users/bytedance/Documents/flash_attn_silicon_metal/include -I/Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp -isystem /Library/Frameworks/Python.framework/Versions/3.12/include/python3.12 -isystem /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pybind11/include
 
 CXX_FLAGSarm64 =  -Wall -Wextra -O3 -DNDEBUG -march=native -std=c++17 -arch arm64 -fPIC -fvisibility=hidden -flto
 

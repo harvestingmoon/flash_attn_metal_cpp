@@ -1,4 +1,4 @@
-# Install script for directory: /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal
+# Install script for directory: /Users/bytedance/Documents/flash_attn_silicon_metal
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,11 +38,11 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE FILE FILES "/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/flash_attn_kernels.metallib")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE FILE FILES "/Users/bytedance/Documents/flash_attn_silicon_metal/build/flash_attn_kernels.metallib")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/libflash_attn_metal_core.dylib")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/Users/bytedance/Documents/flash_attn_silicon_metal/build/libflash_attn_metal_core.dylib")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libflash_attn_metal_core.dylib" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libflash_attn_metal_core.dylib")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -55,13 +55,13 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/include/flash_attn_metal" FILES_MATCHING REGEX "/[^/]*\\.hpp$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/Users/bytedance/Documents/flash_attn_silicon_metal/include/flash_attn_metal" FILES_MATCHING REGEX "/[^/]*\\.hpp$")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/install_local_manifest.txt"
+  file(WRITE "/Users/bytedance/Documents/flash_attn_silicon_metal/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -77,6 +77,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/Users/bytedance/Documents/flash_attn_silicon_metal/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

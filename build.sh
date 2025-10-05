@@ -49,16 +49,44 @@ clean_build() {
 build() {
     echo -e "${BLUE}Building Flash Attention Metal...${NC}"
     
+    # Check for CMake cache conflicts and clean if necessary
+    if [ -f "build/CMakeCache.txt" ]; then
+        echo -e "${YELLOW}Checking CMake cache...${NC}"
+        # Check if cache points to different directory
+        if grep -q "CMAKE_HOME_DIRECTORY" build/CMakeCache.txt; then
+            cached_dir=$(grep "CMAKE_HOME_DIRECTORY" build/CMakeCache.txt | cut -d'=' -f2)
+            current_dir=$(pwd)
+            if [ "$cached_dir" != "$current_dir" ]; then
+                echo -e "${YELLOW}CMake cache conflict detected. Cleaning build directory...${NC}"
+                rm -rf build
+            fi
+        fi
+    fi
+    
     # Create build directory
     mkdir -p build
     
+    # Check for Xcode Command Line Tools
+    if ! command -v xcrun &> /dev/null; then
+        echo -e "${YELLOW}Warning: Xcode Command Line Tools not found.${NC}"
+        echo -e "${YELLOW}Some Metal shader compilation may be skipped.${NC}"
+        echo -e "${YELLOW}To install: xcode-select --install${NC}\n"
+    fi
+    
     # Configure with CMake
     echo -e "${YELLOW}Configuring CMake...${NC}"
-    cmake -B build -DCMAKE_BUILD_TYPE=Release
+    if ! cmake -B build -DCMAKE_BUILD_TYPE=Release; then
+        echo -e "${RED}ERROR: CMake configuration failed!${NC}"
+        echo -e "${RED}Try running: ./build.sh clean${NC}"
+        exit 1
+    fi
     
     # Build
     echo -e "${YELLOW}Compiling...${NC}"
-    cmake --build build --parallel $(sysctl -n hw.ncpu)
+    if ! cmake --build build --parallel $(sysctl -n hw.ncpu); then
+        echo -e "${RED}ERROR: Compilation failed!${NC}"
+        exit 1
+    fi
     
     echo -e "${GREEN}Build complete!${NC}\n"
 }

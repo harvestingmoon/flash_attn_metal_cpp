@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/cmake_install.cmake"
+		"/Users/bytedance/Documents/flash_attn_silicon_metal/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal
+CMAKE_SOURCE_DIR = /Users/bytedance/Documents/flash_attn_silicon_metal
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build
+CMAKE_BINARY_DIR = /Users/bytedance/Documents/flash_attn_silicon_metal/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/_flash_attn_metal.dir/depend.make
@@ -73,18 +73,18 @@ CMakeFiles/_flash_attn_metal.dir/codegen:
 .PHONY : CMakeFiles/_flash_attn_metal.dir/codegen
 
 CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o: CMakeFiles/_flash_attn_metal.dir/flags.make
-CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o: /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/python/bindings.cpp
+CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o: /Users/bytedance/Documents/flash_attn_silicon_metal/python/bindings.cpp
 CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o: CMakeFiles/_flash_attn_metal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o -MF CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o.d -o CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o -c /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/python/bindings.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o -MF CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o.d -o CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o -c /Users/bytedance/Documents/flash_attn_silicon_metal/python/bindings.cpp
 
 CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/python/bindings.cpp > CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bytedance/Documents/flash_attn_silicon_metal/python/bindings.cpp > CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.i
 
 CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/python/bindings.cpp -o CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bytedance/Documents/flash_attn_silicon_metal/python/bindings.cpp -o CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.s
 
 # Object files for target _flash_attn_metal
 _flash_attn_metal_OBJECTS = \
@@ -93,16 +93,16 @@ _flash_attn_metal_OBJECTS = \
 # External object files for target _flash_attn_metal
 _flash_attn_metal_EXTERNAL_OBJECTS =
 
-/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/_flash_attn_metal.cpython-312-darwin.so: CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o
-/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/_flash_attn_metal.cpython-312-darwin.so: CMakeFiles/_flash_attn_metal.dir/build.make
-/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/_flash_attn_metal.cpython-312-darwin.so: libflash_attn_metal_core.dylib
-/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/_flash_attn_metal.cpython-312-darwin.so: CMakeFiles/_flash_attn_metal.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/_flash_attn_metal.cpython-312-darwin.so"
+/Users/bytedance/Documents/flash_attn_silicon_metal/_flash_attn_metal.cpython-312-darwin.so: CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o
+/Users/bytedance/Documents/flash_attn_silicon_metal/_flash_attn_metal.cpython-312-darwin.so: CMakeFiles/_flash_attn_metal.dir/build.make
+/Users/bytedance/Documents/flash_attn_silicon_metal/_flash_attn_metal.cpython-312-darwin.so: libflash_attn_metal_core.dylib
+/Users/bytedance/Documents/flash_attn_silicon_metal/_flash_attn_metal.cpython-312-darwin.so: CMakeFiles/_flash_attn_metal.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module /Users/bytedance/Documents/flash_attn_silicon_metal/_flash_attn_metal.cpython-312-darwin.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/_flash_attn_metal.dir/link.txt --verbose=$(VERBOSE)
-	/usr/bin/strip -x /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/_flash_attn_metal.cpython-312-darwin.so
+	/usr/bin/strip -x /Users/bytedance/Documents/flash_attn_silicon_metal/_flash_attn_metal.cpython-312-darwin.so
 
 # Rule to build all files generated by this target.
-CMakeFiles/_flash_attn_metal.dir/build: /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/_flash_attn_metal.cpython-312-darwin.so
+CMakeFiles/_flash_attn_metal.dir/build: /Users/bytedance/Documents/flash_attn_silicon_metal/_flash_attn_metal.cpython-312-darwin.so
 .PHONY : CMakeFiles/_flash_attn_metal.dir/build
 
 CMakeFiles/_flash_attn_metal.dir/clean:
@@ -110,6 +110,6 @@ CMakeFiles/_flash_attn_metal.dir/clean:
 .PHONY : CMakeFiles/_flash_attn_metal.dir/clean
 
 CMakeFiles/_flash_attn_metal.dir/depend:
-	cd /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles/_flash_attn_metal.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/bytedance/Documents/flash_attn_silicon_metal/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/bytedance/Documents/flash_attn_silicon_metal /Users/bytedance/Documents/flash_attn_silicon_metal /Users/bytedance/Documents/flash_attn_silicon_metal/build /Users/bytedance/Documents/flash_attn_silicon_metal/build /Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles/_flash_attn_metal.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/_flash_attn_metal.dir/depend
 

@@ -538,7 +538,7 @@ def main():
         speedup_torch = torch_time / metal_time
         
         # Status indicators
-        status = "🚀" if (mlx_time is None or speedup_mlx > 1.0) and speedup_torch > 1.0 else "  "
+        status = "PASS" if (mlx_time is None or speedup_mlx > 1.0) and speedup_torch > 1.0 else "  "
         
         print(f"{status} {desc:<28} {metal_time:9.2f}ms {mlx_str:>10} {torch_time:9.2f}ms "
               f"{speedup_mlx_str:>10} {speedup_torch:11.2f}x")

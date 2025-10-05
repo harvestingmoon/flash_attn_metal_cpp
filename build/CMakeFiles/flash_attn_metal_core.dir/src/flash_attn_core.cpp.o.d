@@ -1,6 +1,6 @@
 CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o: \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/src/flash_attn_core.cpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/include/flash_attn_core.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/src/flash_attn_core.cpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/include/flash_attn_core.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdint \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -761,11 +761,11 @@ CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/erase_if_container.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/ranges_iterator_traits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__node_handle \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/Foundation.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSArray.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSObject.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSDefines.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSPrivate.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/Foundation.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSArray.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSObject.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSDefines.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSPrivate.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/objc/runtime.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/objc/objc.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/objc/objc-api.h \
@@ -774,7 +774,7 @@ CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stdbool.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdbool.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/dlfcn.h \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSTypes.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSTypes.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CoreFoundation.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_static_assert.h \
@@ -889,14 +889,14 @@ CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFXMLNode.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFXMLParser.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/objc/message.h \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSEnumerator.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSAutoreleasePool.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSBundle.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSNotification.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSDictionary.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSString.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSObjCRuntime.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSRange.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSEnumerator.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSAutoreleasePool.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSBundle.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSNotification.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSDictionary.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSString.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSObjCRuntime.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSRange.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/binary_negate.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/bind.h \
@@ -914,23 +914,23 @@ CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/default_searcher.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/not_fn.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/perfect_forward.h \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSData.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSDate.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSError.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSLock.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSNumber.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSProcessInfo.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSSet.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSSharedPtr.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSURL.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/Metal.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLAccelerationStructure.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLDefines.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/../Foundation/NSDefines.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLHeaderBridge.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLPrivate.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLAccelerationStructureTypes.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLResource.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSData.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSDate.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSError.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSLock.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSNumber.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSProcessInfo.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSSet.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSSharedPtr.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Foundation/NSURL.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/Metal.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLAccelerationStructure.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLDefines.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/../Foundation/NSDefines.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLHeaderBridge.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLPrivate.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLAccelerationStructureTypes.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLResource.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/mach.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/std_types.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/vm_types.h \
@@ -1007,14 +1007,14 @@ CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/arm/rpc.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/mach_error.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/error.h \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLAllocation.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLStageInputOutputDescriptor.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/../Foundation/NSRange.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLTypes.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLAccelerationStructureCommandEncoder.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLArgument.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLTexture.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLPixelFormat.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLAllocation.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLStageInputOutputDescriptor.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/../Foundation/NSRange.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLTypes.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLAccelerationStructureCommandEncoder.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLArgument.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLTexture.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLPixelFormat.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceRef.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceBase.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xpc/xpc.h \
@@ -1036,65 +1036,65 @@ CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xpc/listener.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/launch.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/IOSurface.framework/Headers/IOSurfaceTypes.h \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLCommandEncoder.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLArgumentEncoder.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLBinaryArchive.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLBlitCommandEncoder.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLBlitPass.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLBuffer.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLCaptureManager.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLCaptureScope.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/../Foundation/NSObject.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/../Foundation/NSString.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLCommandBuffer.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLCommandQueue.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLComputeCommandEncoder.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLComputePass.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLComputePipeline.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLPipeline.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLCounters.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLDepthStencil.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLDevice.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLDrawable.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLDynamicLibrary.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLEvent.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLFence.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLFunctionConstantValues.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLFunctionDescriptor.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLFunctionHandle.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLLibrary.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLFunctionLog.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLFunctionStitching.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLHeap.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLIndirectCommandBuffer.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLIndirectCommandEncoder.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLRenderCommandEncoder.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLRenderPass.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLIntersectionFunctionTable.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLIOCommandBuffer.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLIOCommandQueue.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLIOCompressor.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLLinkedFunctions.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLLogState.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLParallelRenderCommandEncoder.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLRasterizationRate.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLRenderPipeline.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLResidencySet.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLResourceStateCommandEncoder.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLResourceStatePass.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLSampler.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLVertexDescriptor.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLVisibleFunctionTable.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLVersion.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/QuartzCore.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/CAMetalDrawable.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/../Metal/MTLDrawable.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/../Metal/MTLTexture.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/CADefines.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/../Foundation/NSDefines.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/CAPrivate.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/CAMetalLayer.hpp \
-  /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/../Metal/MTLPixelFormat.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLCommandEncoder.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLArgumentEncoder.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLBinaryArchive.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLBlitCommandEncoder.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLBlitPass.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLBuffer.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLCaptureManager.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLCaptureScope.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/../Foundation/NSObject.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/../Foundation/NSString.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLCommandBuffer.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLCommandQueue.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLComputeCommandEncoder.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLComputePass.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLComputePipeline.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLPipeline.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLCounters.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLDepthStencil.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLDevice.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLDrawable.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLDynamicLibrary.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLEvent.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLFence.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLFunctionConstantValues.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLFunctionDescriptor.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLFunctionHandle.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLLibrary.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLFunctionLog.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLFunctionStitching.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLHeap.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLIndirectCommandBuffer.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLIndirectCommandEncoder.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLRenderCommandEncoder.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLRenderPass.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLIntersectionFunctionTable.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLIOCommandBuffer.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLIOCommandQueue.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLIOCompressor.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLLinkedFunctions.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLLogState.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLParallelRenderCommandEncoder.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLRasterizationRate.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLRenderPipeline.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLResidencySet.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLResourceStateCommandEncoder.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLResourceStatePass.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLSampler.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLVertexDescriptor.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLVisibleFunctionTable.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/Metal/MTLVersion.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/QuartzCore.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/CAMetalDrawable.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/../Metal/MTLDrawable.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/../Metal/MTLTexture.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/CADefines.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/../Foundation/NSDefines.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/CAPrivate.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/CAMetalLayer.hpp \
+  /Users/bytedance/Documents/flash_attn_silicon_metal/external/metal-cpp/QuartzCore/../Metal/MTLPixelFormat.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGGeometry.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGBase.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \

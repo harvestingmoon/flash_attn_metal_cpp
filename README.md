@@ -1,9 +1,41 @@
 # Flash Attention Metal for Apple Silicon
 
-A high-performance Flash Attention implementation optimized for Apple Silicon using Metal compute shaders. This project provides a native Metal backend for Flash Attention with significant performance improvements over traditional implementations.
+A high-performance Flash Attention implementation optimized for Apple Silicon using metal-cpp. Inspiration of this project was taken from the original metal-flash-attention implemented in Swift but there is a growing need for bindings.
+
+
+## Performance
+
+The Metal implementation provides significant speedups over PyTorch on Apple Silicon:
+
+- **2-4x faster** than MLX for most configurations
+- **14-82x faster** than PyTorch CPU for large sequences
+- **Linear memory scaling** with sequence length (vs quadratic for naive attention)
+- **Optimized for Apple Silicon** with tuned tile sizes and memory access patterns
+
+### Benchmark Results
+
+The following benchmarks were conducted on Apple Silicon using half precision (fp16):
+
+```
+Configuration                       Metal        MLX    PyTorch     vs MLX   vs PyTorch
+--------------------------------------------------------------------------------------------
+Small: 256 tokens                   0.20ms      0.52ms      2.90ms      2.59x       14.30x
+Medium: 512 tokens                  0.31ms      0.98ms      8.28ms      3.13x       26.54x
+Large: 1024 tokens                  0.48ms      1.74ms     31.09ms      3.59x       64.33x
+XLarge: 2048 tokens                 1.05ms      3.27ms     86.08ms      3.12x       82.05x
+384 tokens, d=128                   0.39ms      1.15ms      6.33ms      2.96x       16.29x
+768 tokens, d=128                   0.65ms      2.12ms     20.77ms      3.27x       32.01x
+Batch=1: 1024 tokens                0.19ms      0.53ms      7.04ms      2.79x       36.98x
+Batch=2: 1024 tokens                0.30ms      0.98ms     14.93ms      3.22x       49.06x
+Batch=8: 1024 tokens                0.85ms      3.28ms     55.61ms      3.85x       65.45x
+```
+
+Performance varies by configuration, but typical speedups are observed for:
+- Sequence lengths: 256-2048 tokens
+- Head dimensions: 64-128  
+- Batch sizes: 1-8project provides a native Metal backend for Flash Attention with significant performance improvements over traditional implementations.
 
 ## Overview
-
 Flash Attention Metal implements the FlashAttention-2 algorithm using Apple's Metal Performance Shaders framework, specifically optimized for Apple Silicon GPUs. The implementation provides:
 
 - **Memory-efficient attention** following FlashAttention-2 principles
@@ -196,27 +228,50 @@ Performance varies by configuration, but typical speedups are observed for:
 - Online softmax with numerical stability
 - Optimized memory access patterns
 
-### Current Limitations
-- **Variable Length Sequences**: No support for batched sequences with different lengths
-- **Grouped-Query Attention (GQA)**: Assumes num_heads_q == num_heads_k
-- **Multi-Query Attention (MQA)**: No support for shared K/V across heads
-- **Windowed Attention**: No sliding window masking
-- **Rotary Position Embedding**: No RoPE integration
-- **Dropout**: No training-time dropout support
+### Implementation Status
+
+**Currently Active in Optimized Kernel:**
+- Standard multi-head attention
+- Causal masking
+- Half precision (fp16) computation
+- Vectorized SIMD operations
+- Memory-efficient tiling
+
+**Infrastructure Available (common.metal) - Needs Integration:**
+- **Rotary Position Embedding (RoPE)**: Full implementation with cos/sin tables
+- **Windowed Attention**: Left/right window masking functions
+- **ALiBi Support**: Linear bias computation for positions
+- **Dropout**: Training-time dropout with pseudo-random generation
+- **GQA/MQA Support**: Head mapping utilities for grouped/multi-query attention
+- **Advanced Utilities**: SIMD reductions, vectorized loads, numerical stability helpers
+
+**Missing Infrastructure:**
+- **Variable Length Sequences (VarLen)**: No padding mask support implemented
 
 ## TODO / Future Improvements
 
-The following features and optimizations are planned for future releases:
+### Integration Tasks (Infrastructure Exists)
+The following features have complete implementations in `kernels/common.metal` but need integration into the optimized kernel:
 
-- **Variable Length Sequences (VarLen)**: Support for batched sequences with different lengths and padding masks
-- **Grouped-Query Attention (GQA)**: Support for efficient inference with fewer KV heads
-- **Multi-Query Attention (MQA)**: Shared K/V projections across attention heads
-- **Rotary Position Embedding (RoPE)**: Integration of rotary positional embeddings
-- **Windowed Attention**: Sliding window attention patterns for long sequences
-- **Training Features**: Dropout support and backward pass implementation
-- **Multi-Latent Attention (MLA)**: Exploration of advanced attention mechanisms like MLA
-- **ALiBi Support**: Attention with Linear Biases for position encoding
+- **Rotary Position Embedding (RoPE)**: Integrate existing `apply_rotary_embedding()` functions
+- **Windowed Attention**: Integrate `is_window_masked()` for sliding window patterns  
+- **Grouped-Query Attention (GQA)**: Use `gqa_kv_head_idx()` for head mapping
+- **Multi-Query Attention (MQA)**: Leverage existing GQA infrastructure
+- **ALiBi Support**: Integrate `compute_alibi_bias()` for positional biases
+- **Dropout**: Integrate `apply_dropout()` for training support
+- **Advanced Optimizations**: Use existing SIMD utilities and vectorized operations
+
+### New Development Tasks
+- **Variable Length Sequences (VarLen)**: Implement padding mask support for batched sequences
+- **Backward Pass**: Implement gradient computation for training
+- **Multi-Latent Attention (MLA)**: Research and implement advanced attention mechanisms
 - **Mixed Precision**: Support for different precision modes beyond fp16
+- **Dynamic Batching**: Support for variable batch sizes during inference
+
+### Performance Optimizations
+- **Kernel Fusion**: Combine multiple operations for better throughput
+- **Memory Bandwidth Optimization**: Further reduce global memory access
+- **Multi-GPU Support**: Scale across multiple Apple Silicon devices
 
 Contributions towards these goals are welcome!
 

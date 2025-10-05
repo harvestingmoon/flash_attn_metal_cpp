@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/python/bindings.cpp" "CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o" "gcc" "CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o.d"
+  "/Users/bytedance/Documents/flash_attn_silicon_metal/python/bindings.cpp" "CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o" "gcc" "CMakeFiles/_flash_attn_metal.dir/python/bindings.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

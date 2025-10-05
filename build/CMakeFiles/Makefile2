@@ -54,10 +54,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal
+CMAKE_SOURCE_DIR = /Users/bytedance/Documents/flash_attn_silicon_metal
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build
+CMAKE_BINARY_DIR = /Users/bytedance/Documents/flash_attn_silicon_metal/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -89,14 +89,14 @@ clean: CMakeFiles/_flash_attn_metal.dir/clean
 CMakeFiles/metal_shaders.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/metal_shaders.dir/build.make CMakeFiles/metal_shaders.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/metal_shaders.dir/build.make CMakeFiles/metal_shaders.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles --progress-num= "Built target metal_shaders"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles --progress-num= "Built target metal_shaders"
 .PHONY : CMakeFiles/metal_shaders.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/metal_shaders.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/metal_shaders.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles 0
 .PHONY : CMakeFiles/metal_shaders.dir/rule
 
 # Convenience name for target.
@@ -106,7 +106,7 @@ metal_shaders: CMakeFiles/metal_shaders.dir/rule
 # codegen rule for target.
 CMakeFiles/metal_shaders.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/metal_shaders.dir/build.make CMakeFiles/metal_shaders.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles --progress-num= "Finished codegen for target metal_shaders"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles --progress-num= "Finished codegen for target metal_shaders"
 .PHONY : CMakeFiles/metal_shaders.dir/codegen
 
 # clean rule for target.
@@ -121,14 +121,14 @@ CMakeFiles/metal_shaders.dir/clean:
 CMakeFiles/flash_attn_metal_core.dir/all: CMakeFiles/metal_shaders.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/flash_attn_metal_core.dir/build.make CMakeFiles/flash_attn_metal_core.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/flash_attn_metal_core.dir/build.make CMakeFiles/flash_attn_metal_core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles --progress-num=3,4 "Built target flash_attn_metal_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles --progress-num=3,4 "Built target flash_attn_metal_core"
 .PHONY : CMakeFiles/flash_attn_metal_core.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/flash_attn_metal_core.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/flash_attn_metal_core.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles 0
 .PHONY : CMakeFiles/flash_attn_metal_core.dir/rule
 
 # Convenience name for target.
@@ -138,7 +138,7 @@ flash_attn_metal_core: CMakeFiles/flash_attn_metal_core.dir/rule
 # codegen rule for target.
 CMakeFiles/flash_attn_metal_core.dir/codegen: CMakeFiles/metal_shaders.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/flash_attn_metal_core.dir/build.make CMakeFiles/flash_attn_metal_core.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles --progress-num=3,4 "Finished codegen for target flash_attn_metal_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles --progress-num=3,4 "Finished codegen for target flash_attn_metal_core"
 .PHONY : CMakeFiles/flash_attn_metal_core.dir/codegen
 
 # clean rule for target.
@@ -153,14 +153,14 @@ CMakeFiles/flash_attn_metal_core.dir/clean:
 CMakeFiles/_flash_attn_metal.dir/all: CMakeFiles/flash_attn_metal_core.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/_flash_attn_metal.dir/build.make CMakeFiles/_flash_attn_metal.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/_flash_attn_metal.dir/build.make CMakeFiles/_flash_attn_metal.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles --progress-num=1,2 "Built target _flash_attn_metal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles --progress-num=1,2 "Built target _flash_attn_metal"
 .PHONY : CMakeFiles/_flash_attn_metal.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/_flash_attn_metal.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/_flash_attn_metal.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles 0
 .PHONY : CMakeFiles/_flash_attn_metal.dir/rule
 
 # Convenience name for target.
@@ -170,7 +170,7 @@ _flash_attn_metal: CMakeFiles/_flash_attn_metal.dir/rule
 # codegen rule for target.
 CMakeFiles/_flash_attn_metal.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/_flash_attn_metal.dir/build.make CMakeFiles/_flash_attn_metal.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/build/CMakeFiles --progress-num=1,2 "Finished codegen for target _flash_attn_metal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/bytedance/Documents/flash_attn_silicon_metal/build/CMakeFiles --progress-num=1,2 "Finished codegen for target _flash_attn_metal"
 .PHONY : CMakeFiles/_flash_attn_metal.dir/codegen
 
 # clean rule for target.

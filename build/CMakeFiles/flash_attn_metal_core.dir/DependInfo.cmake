@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/bytedance/Documents/flash-attention/flash_attn/flash_attn_silicon_metal/src/flash_attn_core.cpp" "CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o" "gcc" "CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o.d"
+  "/Users/bytedance/Documents/flash_attn_silicon_metal/src/flash_attn_core.cpp" "CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o" "gcc" "CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
