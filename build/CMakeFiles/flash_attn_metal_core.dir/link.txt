@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -O3 -DNDEBUG -march=native -arch arm64 -dynamiclib -Wl,-headerpad_max_install_names -o libflash_attn_metal_core.dylib -install_name @rpath/libflash_attn_metal_core.dylib CMakeFiles/flash_attn_metal_core.dir/src/flash_attn_core.cpp.o  -framework Metal -framework Foundation -framework QuartzCore -framework MetalKit
