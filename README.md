@@ -1,4 +1,4 @@
-# Flash Attention Metal for Apple Silicon
+# Flash Attention for Apple Silicon Using metal-cpp
 
 A high-performance Flash Attention implementation optimized for Apple Silicon using metal-cpp. Inspiration of this project was taken from the original metal-flash-attention implemented in Swift but there is a growing need for bindings.
 
