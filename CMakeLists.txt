@@ -85,8 +85,7 @@ endif()
 
 # Metal Shader Compilation
 set(METAL_SHADERS
-    ${CMAKE_CURRENT_SOURCE_DIR}/kernels/flash_attention_fwd.metal
-    ${CMAKE_CURRENT_SOURCE_DIR}/kernels/flash_attention_bwd.metal
+    ${CMAKE_CURRENT_SOURCE_DIR}/kernels/flash_attention_fwd_optimized.metal
     ${CMAKE_CURRENT_SOURCE_DIR}/kernels/common.metal
 )
 

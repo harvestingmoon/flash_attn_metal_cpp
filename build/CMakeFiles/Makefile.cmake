@@ -12,7 +12,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11ConfigVersion.cmake"
   "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11NewTools.cmake"
   "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pybind11/share/cmake/pybind11/pybind11Targets.cmake"
-  "/Users/bytedance/Documents/flash_attn_silicon_metal/CMakeLists.txt"
+  "/Users/bytedance/Documents/flash_attn_metal_cpp/CMakeLists.txt"
   "CMakeFiles/4.1.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.1.2/CMakeOBJCXXCompiler.cmake"
   "CMakeFiles/4.1.2/CMakeSystem.cmake"

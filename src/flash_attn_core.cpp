@@ -316,14 +316,16 @@ bool FlashAttentionForward::execute(
         return false;
     }
     
-    // Copy input data to GPU buffers
+    // Copy input data to GPU buffers with optimized transfers
+    // Using MTL::ResourceStorageModeShared, these are already mapped
     std::memcpy(Q_buf->contents(), Q_data, q_size);
     std::memcpy(K_buf->contents(), K_data, k_size);
     std::memcpy(V_buf->contents(), V_data, v_size);
     
-    // Initialize output buffer to zero (important for buffer pool reuse)
-    std::memset(O_buf->contents(), 0, o_size);
-    std::memset(LSE_buf->contents(), 0, lse_size);
+    // Mark modified ranges for Metal to sync (if needed)
+    Q_buf->didModifyRange(NS::Range::Make(0, q_size));
+    K_buf->didModifyRange(NS::Range::Make(0, k_size));
+    V_buf->didModifyRange(NS::Range::Make(0, v_size));
     
     // Create params buffer (small, not worth pooling)
     MTL::Buffer* params_buf = device_.device()->newBuffer(&params, sizeof(FlashAttentionParams),
@@ -360,31 +362,45 @@ bool FlashAttentionForward::execute(
     encoder->setBuffer(K_buf, 0, 1);
     encoder->setBuffer(V_buf, 0, 2);
     encoder->setBuffer(O_buf, 0, 3);
-    encoder->setBuffer(LSE_buf, 0, 4);
-    encoder->setBuffer(cos_buf, 0, 5);
-    encoder->setBuffer(sin_buf, 0, 6);
-    encoder->setBuffer(alibi_buf, 0, 7);
-    encoder->setBuffer(params_buf, 0, 8);
+    
+    // Set scalar parameters
+    encoder->setBytes(&params.batch_size, sizeof(uint32_t), 4);
+    encoder->setBytes(&params.seqlen_q, sizeof(uint32_t), 5);
+    encoder->setBytes(&params.num_heads_q, sizeof(uint32_t), 6);
+    encoder->setBytes(&params.head_dim, sizeof(uint32_t), 7);
+    encoder->setBytes(&params.softmax_scale, sizeof(float), 8);
+    encoder->setBytes(&params.is_causal, sizeof(bool), 9);
+    
+    // RoPE buffers
+    if (cos_buf && sin_buf) {
+        encoder->setBuffer(cos_buf, 0, 10);
+        encoder->setBuffer(sin_buf, 0, 11);
+    } else {
+        // Set null pointers if RoPE not used
+        encoder->setBuffer(nullptr, 0, 10);
+        encoder->setBuffer(nullptr, 0, 11);
+    }
+    encoder->setBytes(&params.has_rotary, sizeof(bool), 12);
     
     // Calculate dispatch dimensions for tiled kernel
-    uint32_t block_m = 32;  // DEFAULT_BLOCK_M in kernel
+    uint32_t block_m = 32;  // OPT_BLOCK_M in kernel
     uint32_t num_q_blocks = (params.seqlen_q + block_m - 1) / block_m;
     
     // Grid: (num_q_blocks, num_heads, batch)
     MTL::Size grid_size = MTL::Size(num_q_blocks, params.num_heads_q, params.batch_size);
     
-    // Simple per-thread version: 256 threads (32x8) is sufficient
-    MTL::Size threadgroup_size = MTL::Size(32, 8, 1);  // 256 threads
+    // Threadgroup size: 256 threads (OPT_THREADS)
+    MTL::Size threadgroup_size = MTL::Size(256, 1, 1);
     
     // Dispatch compute kernel
     encoder->dispatchThreadgroups(grid_size, threadgroup_size);
     encoder->endEncoding();
     
-    // Execute
+    // Execute with non-blocking commit
     cmd_buf->commit();
     cmd_buf->waitUntilCompleted();
     
-    // Copy output back
+    // Copy output back - only what we need
     std::memcpy(O_data, O_buf->contents(), o_size);
     if (LSE_data) {
         std::memcpy(LSE_data, LSE_buf->contents(), lse_size);

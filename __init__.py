@@ -29,21 +29,18 @@ try:
     if os.path.exists(metallib_path):
         _flash_attn_metal.load_shaders(metallib_path)
     else:
-        # Fall back to compiling from source
+        # Fall back to compiling from source  
         common_metal = os.path.join(shader_dir, 'common.metal')
-        fwd_metal = os.path.join(shader_dir, 'flash_attention_fwd.metal')
+        fwd_metal = os.path.join(shader_dir, 'flash_attention_fwd_optimized.metal')
         
-        if os.path.exists(common_metal) and os.path.exists(fwd_metal):
-            with open(common_metal, 'r') as f:
-                common_src = f.read()
+        if os.path.exists(fwd_metal):
             with open(fwd_metal, 'r') as f:
                 fwd_src = f.read()
             
-            # Combine sources
-            combined_src = common_src + "\n\n" + fwd_src
-            _flash_attn_metal.compile_shaders(combined_src)
+            # Just use the optimized forward pass (it doesn't need common.metal)
+            _flash_attn_metal.compile_shaders(fwd_src)
         else:
-            raise RuntimeError("Metal shaders not found. Please ensure kernels are available.")
+            raise RuntimeError(f"Metal shaders not found at {fwd_metal}. Please ensure kernels are available.")
     
     def metal_attention(q, k, v, causal=False, softmax_scale=None, dropout_p=0.0):
         """
